@@ -3,8 +3,18 @@
 # Author: Haichuan Wang
 ###############################################################################
 app.name <- 'Pi_lapply'
-source('setup_Pi.R')
 
+setup <- function(args=c('2000000')) {
+    n<-as.integer(args[1])
+    if(is.na(n)){ n <- 2000000L }
+    
+    cat('[INFO][', app.name, '] n=', n, '\n', sep='')
+    
+    rdata <- runif(n*2) 
+    S <- lapply(1:n, function(i){rdata[(2*i-1):(2*i)]})
+    
+    S
+}
 run <- function(S) {
     
     #X includes "1" column, Y column vec

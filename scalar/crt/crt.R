@@ -5,13 +5,13 @@
 
 # I define GCD and LCM inside the run function
 
-setup <- function(args='100') {
+setup <- function(args='30000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 100 }
+    if(is.na(n)){ n <- 30000 }
     return(n)
 }
 
-run <- function(repcount=100) {
+run <- function(repcount=30000) {
 	gcd = function(m, n) {
 		while (n != 0){
 			t <- n;

@@ -3,9 +3,41 @@
 # Author: Haichuan Wang
 ###############################################################################
 app.name <- "NN"
-source('setup_k-NN.R')
 library(class) #use built-in knn
-
+setup <- function(args=c('20000', '20000', '10', '5')) {
+  set.seed(42)
+    train_n<-as.integer(args[1])
+    if(is.na(train_n)){ train_n <- 20000L }
+    
+    test_n<-as.integer(args[2])
+    if(is.na(test_n)){ test_n <- 20000L }   
+    
+    ncluster<-as.integer(args[3])
+    if(is.na(ncluster)){ ncluster <- 10L }
+    
+    k<-as.integer(args[4])
+    if(is.na(k)){ k <- 5L }    
+    
+    cat('[INFO][', app.name, '] train_n=', train_n, ', test_n=', test_n, ', ncluster=', ncluster, ', k=', k, '\n', sep='')
+    
+    #generate training
+    mean_shift <- rep(0:(ncluster-1), length.out = 3*train_n)
+    train_set <- matrix(rnorm(3*train_n, sd = ncluster/2) + mean_shift, ncol=3)
+    list_train_set <- lapply(1:train_n, function(i) {
+                label_str <-paste('C', as.character(mean_shift[i]), sep="")
+                list(val=train_set[i,], label=label_str)
+            })
+    
+    test_set <- matrix(runif(3*test_n, min=-ncluster, max=2*ncluster-1), ncol=3)
+    list_test_set <- lapply(1:test_n, function(i) {
+                list(val=test_set[i,])
+            })
+    
+    list(train_set=list_train_set, 
+         test_set=list_test_set,
+         ncluster=ncluster,
+         k=k)
+}
 run <- function(dataset) {
 
     list_train<-dataset$train_set

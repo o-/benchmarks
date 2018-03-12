@@ -3,9 +3,9 @@
 # 1) according to the test harness
 # 2) remove global variable lookup
 
-setup<-function(args='100000') {
+setup<-function(args='10000') {
     N_OPTIONS<-as.integer(args[1])
-    if(is.na(N_OPTIONS)){ N_OPTIONS <- 100000L }
+    if(is.na(N_OPTIONS)){ N_OPTIONS <- 10000L }
     
     cat('[black_scholes]N_OPTIONS =', N_OPTIONS, '\n')
     

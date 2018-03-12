@@ -4,9 +4,9 @@
 
 # random 1M x 1M matrix with 10M entries
 
-setup<-function(args='10000000') {
+setup<-function(args='5000000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n=10000000L }
+    if(is.na(n)){ n=5000000L }
     cat('[smv_builtin]n =', n, '\n')
     library(Matrix)
     

@@ -9,9 +9,9 @@
 # ------------------------------------------------------------------
 
 
-setup <- function(args='1000') {
+setup <- function(args='500') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 1000 }
+    if(is.na(n)){ n <- 500 }
     return(n)
 }
 

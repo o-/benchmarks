@@ -3,9 +3,9 @@
 # http://home.online.no/~pjacklam/notes/invnorm/
 
 
-setup<-function(args='10000000') {
+setup<-function(args='3000000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n=10000000L }
+    if(is.na(n)){ n=3000000L }
     cat('[sample]n =', n, '\n')
     n
 }

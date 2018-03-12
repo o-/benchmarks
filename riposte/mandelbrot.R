@@ -1,10 +1,10 @@
 #adapted from https://github.com/ispc/ispc/tree/master/examples/mandelbrot
 
-setup<-function(args='100') {
+setup<-function(args='60') {
     
     maxIterations<-as.integer(args[1])
     if(is.na(maxIterations)){ 
-        maxIterations <-100L
+        maxIterations <-60L
     }
     
     width <- 2048

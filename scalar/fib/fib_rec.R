@@ -3,14 +3,14 @@
 # Author: Administrator
 ###############################################################################
 
-setup <- function(args='30') {
+setup <- function(args='34') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 30 }
+    if(is.na(n)){ n <- 34 }
     return(n)
 }
 
 
-run <- function(n=30)
+run <- function(n=34)
 {
 	if (n < 2) { 1; }
 	else {run(n - 1) + run(n - 2);}

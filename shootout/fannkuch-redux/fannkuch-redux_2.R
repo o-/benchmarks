@@ -8,9 +8,9 @@
 # Modified to be compatible with rbenchmark interface
 # ------------------------------------------------------------------
 
-setup <- function(args='10') {
+setup <- function(args='9') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 10 }
+    if(is.na(n)){ n <- 9 }
     return(n)
 }
 

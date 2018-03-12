@@ -7,9 +7,9 @@
 # Original Loc: https://github.com/allr/fastr/tree/master/test/r/shootout/pidigits
 # Modified to be compatible with rbenchmark interface
 
-setup <- function(args='500') {
+setup <- function(args='100') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 500 }
+    if(is.na(n)){ n <- 100 }
     return(n)
 }
 

@@ -2,12 +2,12 @@
 # 
 ###############################################################################
 
-setup = function(args='200') {
+setup = function(args='700') {
     n <- as.integer(args[1])
-    if(is.na(n)){ n <- 200 }
+    if(is.na(n)){ n <- 700 }
     
     cat("Matrix-Matrix Multiply of two",  n, "x", n, "matrices, vector method\n");
-    
+    set.seed(42)
     A <- matrix(rnorm(n*n), ncol=n, nrow=n)
     B <- matrix(rnorm(n*n), ncol=n, nrow=n)
     

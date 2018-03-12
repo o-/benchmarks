@@ -9,9 +9,9 @@
 # ------------------------------------------------------------------
 
 
-setup <- function(args='500000') {
+setup <- function(args='50000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 500000 }
+    if(is.na(n)){ n <- 50000 }
     return(n)
 }
 
@@ -117,7 +117,7 @@ run<-function(num) {
     options(digits=9)
     offset_momentum()
     cat(energy(), "\n")
-    for (i in 1:n)
+    for (i in 1:num)
         advance(0.01)
     cat(energy(), "\n")
 }

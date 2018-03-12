@@ -12,9 +12,9 @@
 #
 
 
-setup <- function(args='250000') {
+setup <- function(args='150000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 250000 }
+    if(is.na(n)){ n <- 150000 }
     return(n)
 }
 

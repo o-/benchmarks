@@ -4,9 +4,9 @@
 # Contributed Peng Wu, David Padua
 
 
-setup <- function(args='500000') {
+setup <- function(args='80000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 500000 }
+    if(is.na(n)){ n <- 80000 }
     return(n)
 }
 

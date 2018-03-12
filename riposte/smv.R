@@ -3,12 +3,12 @@
 # TODO: sort input by row for perf?
 # random 1M x 1M matrix with 100M entries
 
-setup<-function(args=c('20000000', '500000')) {
+setup<-function(args=c('5000000', '200000')) {
     M <- as.integer(args[1])
-    if(is.na(M)){ M=20000000L }
+    if(is.na(M)){ M=5000000L }
 
     N <- as.integer(args[2])
-    if(is.na(N)){ N=500000L }
+    if(is.na(N)){ N=200000L }
     
     cat('[smv]M =', M, 'N =', N, '\n')
     

@@ -19,6 +19,7 @@ setup <- function(args='regexdna-input500000.txt') {
 
 
 run <- function(in_filename) {
+  for(i in 1:4000) {
     pattern1 <- c(
             "agggtaaa|tttaccct",
             "[cgt]gggtaaa|tttaccc[acg]",
@@ -67,6 +68,7 @@ run <- function(in_filename) {
                 useBytes=TRUE)
     
     cat("", len1, len2, nchar(str), sep="\n")
+  }
 }
 
 

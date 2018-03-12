@@ -3,13 +3,13 @@
 # Author: Haichuan Wang(hwang154@illinois.edu)
 ###############################################################################
 
-setup <- function(args='1000') {
+setup <- function(args='50000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 1000 }
+    if(is.na(n)){ n <- 50000 }
     return(n)
 }
 
-run <- function(rep=1000)
+run <- function(rep=50000)
 {
 	n <-1000;
 	for(i in 1:rep){

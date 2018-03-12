@@ -4,15 +4,14 @@
 ###############################################################################
 
 
-setup <- function(args=c('123456789', '234736437')) {
-    m<-as.integer(args[1])
-    n<-as.integer(args[2])
-    if(is.na(m)){ m <- 123456789 }
-    if(is.na(n)){ n <- 234736437 }
-    list(m,n)
+setup <- function(args='200000') {
+    n<-as.integer(args[1])
+    if(is.na(n)){ n <- 200000 }
+    return(n)
 }
 
-run <- function(mn) {
+run <- function(iter=200000, mn=c(123456789, 234736437)) {
+  for(i in 1:iter) {
     m <- mn[[1]]
     n <- mn[[2]]
 	gcd<-function(m,n) {
@@ -21,6 +20,7 @@ run <- function(mn) {
 	}
 	r<-gcd(m,n);
 	print(r);
+  }
 }
 
 

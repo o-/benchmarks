@@ -2,12 +2,13 @@
 # 
 ###############################################################################
 
-setup = function(args='10000000') {
+setup = function(args='30000000') {
     n <- as.integer(args[1])
-    if(is.na(n)){ n <- 10000000 }
+    if(is.na(n)){ n <- 30000000 }
     
     cat("Vector Add two",  n, "size vectors(10% NA), iterative method\n");
     
+    set.seed(42)
     A <- rnorm(n)
     B <- rnorm(n)
     idx <- runif(n*0.1, 1, n) #10% are NA

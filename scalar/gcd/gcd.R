@@ -4,13 +4,13 @@
 ###############################################################################
 
 
-setup <- function(args='100000') {
+setup <- function(args='1000000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 100000 }
+    if(is.na(n)){ n <- 1000000 }
     return(n)
 }
 
-run <- function(l=100000) {
+run <- function(l=1000000) {
 	
 	a <- as.integer(runif(l, 1, 1000000000));
 	b <- as.integer(runif(l, 1, 1000000000));	

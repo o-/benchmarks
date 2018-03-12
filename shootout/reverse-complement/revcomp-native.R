@@ -18,6 +18,7 @@ setup <- function(args='revcomp-input250000.txt') {
 }
 
 run<-function(in_filename) {
+  for(i in 1:60000) {
     codes <- c(
             "A", "C", "G", "T", "U", "M", "R", "W", "S", "Y", "K", "V", "H", "D", "B",
             "N")
@@ -40,7 +41,7 @@ run<-function(in_filename) {
         }
     }
     close(f)
-
+  }
 }
 
 if (!exists('harness_argc', mode='numeric')) {

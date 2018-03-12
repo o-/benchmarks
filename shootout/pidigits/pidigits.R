@@ -12,9 +12,9 @@
 # But it's about  4x faster
 
 
-setup <- function(args='500') {
+setup <- function(args='250') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 500 }
+    if(is.na(n)){ n <- 250 }
     return(n)
 }
 

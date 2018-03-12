@@ -8,9 +8,9 @@
 # Modified to be compatible with rbenchmark interface
 # ------------------------------------------------------------------
 
-setup <- function(args='3000') {
+setup <- function(args='2000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 3000L }
+    if(is.na(n)){ n <- 2000L }
     return(n)
 }
 

@@ -12,9 +12,9 @@
 
 # directly set command line argument n here
 
-setup <- function(args='500') {
+setup <- function(args='400') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 500L }
+    if(is.na(n)){ n <- 400L }
     return(n)
 }
 

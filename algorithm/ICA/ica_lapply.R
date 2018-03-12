@@ -6,7 +6,26 @@
 # Un-mixing n mixed independent uniforms
 ###############################################################################
 app.name <- "ICA_lapply"
-source('setup_ica.R')
+
+setup <- function(args=c('17000', '2', '25')) {
+    n<-as.integer(args[1])
+    if(is.na(n)){ n <- 17000L }
+    
+    nvar <-as.integer(args[2])
+    if(is.na(nvar)){ nvar <- 2L }
+    
+    niter<-as.integer(args[3])
+    if(is.na(niter)){ niter <- 25L }
+    
+    cat('[INFO][', app.name, '] n=', n, ', nvar=', nvar, ', niter=', niter, '\n', sep='')
+    
+    #generate pre-centered data. Note the data shape is n x nvar
+    S <- matrix(runif(n*nvar), nrow=n, ncol=nvar)
+    A <- matrix(c(1, 1, -1, 3), 2, 2)
+    X <- scale(S %*% A, scale = FALSE) #pre-centering
+    X <- lapply(1:n, function(i){X[i,]})
+    list(X = X, A = A, nvar=nvar, niter = niter)
+}
 
 run <- function(dataset) {
     X <- dataset$X

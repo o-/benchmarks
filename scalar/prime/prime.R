@@ -3,16 +3,16 @@
 # Author: Haichuan Wang(hwang154@illinois.edu)
 ###############################################################################
 
-setup <- function(args='100000') {
+setup <- function(args='400000') {
     n<-as.integer(args[1])
-    if(is.na(n)){ n <- 100000 }
+    if(is.na(n)){ n <- 400000 }
     return(n)
 }
 
 #Simple trivial test of n
 #no any optimizaiton, just test the worst loop case
 
-run <- function(n=100000) {
+run <- function(n=400000) {
 	if(n<2) { n <- 2;}
 	
 	num_primes <- 0;
